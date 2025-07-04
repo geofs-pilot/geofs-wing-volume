@@ -13,6 +13,15 @@ const exemptAircraft = new Set([]);
 let savedVolume = null; 
 let wasCockpit = false;
 let volumeReduction = 0.5;
+let reductionCams = new Set (["wing", "eng", "cabin", "right", "left", "shuttle", "docking controls", "mid-deck", "payload bay", "engine"])
+function matchesReduction(cameraMode) {
+    for (let keyword of reductionCams) {
+        if (cameraMode.toLowerCase().includes(keyword)) {
+            return true;
+        }
+    }
+    return false;
+}
 
 setInterval(() => {
     const currentId = Number(geofs.aircraft.instance.id);
@@ -30,8 +39,8 @@ setInterval(() => {
         }
         return;
     }
-
-if (cameraMode.toLowerCase().includes("wing") || ) {
+let wing = matchesReduction(cameraMode);
+    if (wing) {
         if (!wasCockpit) {
             savedVolume = geofs.preferences.volume;
             geofs.preferences.volume = savedVolume * volumeReduction;
