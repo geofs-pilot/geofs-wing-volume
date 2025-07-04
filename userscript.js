@@ -9,6 +9,7 @@
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=geo-fs.com
 // @grant        none
 // ==/UserScript==
+//To exempt aircraft from having their volume reduced, add their IDs into the set below: find the id by typing in geofs.aircraft.instance.id in the Console tab after pressing Ctrl Shift I. Press enter and it will return a number, that is the ID. An example set (this will exclude the first 4 default aircraft): const exemptAircraft = new Set([1, 2, 3, 4, ]) 
 const exemptAircraft = new Set([]);
 let savedVolume = null; 
 let wasCockpit = false;
