@@ -14,7 +14,7 @@ const exemptAircraft = new Set([]);
 let savedVolume = null; 
 let wasCockpit = false;
 let volumeReduction = 0.5;
-let reductionCams = new Set (["wing", "eng", "cabin", "right", "left", "shuttle", "docking controls", "mid-deck", "payload bay", "engine"])
+let reductionCams = new Set (["wing", "eng", "cabin", "right", "left", "shuttle", "docking controls", "mid-deck", "payload bay", "engine", "tail"])
 function matchesReduction(cameraMode) {
     for (let keyword of reductionCams) {
         if (cameraMode.toLowerCase().includes(keyword)) {
