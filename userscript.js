@@ -10,11 +10,11 @@
 // @grant        none
 // ==/UserScript==
 //To exempt aircraft from having their volume reduced, add their IDs into the set below: find the id by typing in geofs.aircraft.instance.id in the Console tab after pressing Ctrl Shift I. Press enter and it will return a number, that is the ID. An example set (this will exclude the first 4 default aircraft): const exemptAircraft = new Set([1, 2, 3, 4, ]) 
-const exemptAircraft = new Set([]);
+const exemptAircraft = new Set([2864, 2418, 2420, 2426, 5316, 5314, 5193, 2750, 5347, 5229, 5038, 2752, 4409, 5405, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 18, 20, 23, 24, 25, 27, 28, 29, 31, 51, 102]);
 let savedVolume = null; 
 let wasCockpit = false;
 let volumeReduction = 0.5;
-let reductionCams = new Set (["wing", "eng", "cabin", "right", "left", "shuttle", "docking controls", "mid-deck", "payload bay", "engine", "tail"])
+let reductionCams = new Set (["wing", "eng", "cabin", "right", "left", "docking controls", "mid-deck", "payload bay", "engine", "tail"])
 function matchesReduction(cameraMode) {
     for (let keyword of reductionCams) {
         if (cameraMode.toLowerCase().includes(keyword)) {
